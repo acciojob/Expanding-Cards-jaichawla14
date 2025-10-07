@@ -1,1 +1,67 @@
-/*  your css code here. If applicable */
+ * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Container for all cards */
+    .container {
+      display: flex;
+      gap: 20px;
+      width: 90%;
+      max-width: 1400px;
+    }
+
+    /* Panel (each card) */
+    .panel {
+      position: relative;
+      height: 500px;
+      flex: 1;
+      border-radius: 30px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: flex 0.5s ease;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.6);
+    }
+
+    /* Background images */
+    .panel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      transition: transform 0.5s ease;
+    }
+
+    /* Text inside panel */
+    .img-text {
+      padding: 20px;
+      z-index: 1;
+    }
+
+    /* Active panel (expanded) */
+    .panel.active {
+      flex: 5; /* expanded width */
+    }
+
+    /* Shrinked panels (default) */
+    .panel:not(.active) {
+      flex: 1;
+    }
